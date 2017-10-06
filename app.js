@@ -5,15 +5,32 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
-var methodOverride = require('method-override');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var materiales = require('./routes/materiales');
-var productos = require('./routes/productos');
+var methodOverride = require('method-override');
+var bodyParser = require('body-parser');
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
+
+require('./passport/passport')(passport);
+
+var routes = require('./routes/routes');
+
+// var index = require('./routes/index');
+// var users = require('./routes/users');
+// var materiales = require('./routes/materiales');
+// var productos = require('./routes/productos');
+// var admin = require('./routes/admin');
 
 
 var app = express();
+app.use(cookieParser());
+app.use(session({
+secret: 'jarsolSecret',
+resave: false,
+saveUninitialized : false
+}));
+app.use(flash());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,13 +44,17 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/materiales', materiales);
-app.use('/productos', productos);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use('/', routes);
+// app.use('/', index);
+// app.use('/users', users);
+// app.use('/admin', admin);
+// app.use('/materiales', materiales);
+// app.use('/productos', productos);
 
 
 // catch 404 and forward to error handler

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Administracion</title>
+</head>
+
+<body>
+    <h1>Panel de Administracion</h1>
+
+
+
+    <% if(isAuthenticated ) { %>
+        <h1>user
+            <%=user.email %>
+        </h1>
+        <% }%>
+
+            <p>This is a paragraph.</p>
+
+            <a href="http://localhost:3000/user/logout">Cerrar Sesion</a>
+
+</body>
+
+</html>
