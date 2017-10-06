@@ -1,0 +1,23 @@
+<<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>Imagenes Proyetos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+  
+
+   <% images.forEach(function(image) { %>
+  <div class="col-md-6 " align="center"> <img alt="Picture" src="http://localhost:3000<%=image.picture%>" class=" img-responsive"> </div>
+        
+    <% }); %>
+
+ 
+    </body>
+
+    </html>

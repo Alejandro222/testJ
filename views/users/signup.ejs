@@ -1,69 +1,88 @@
-
 <html>
-<header>    
-       <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<header>
+  <title>JARSOL-Registro</title>
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </header>
 <style>
-    .profile-img-card {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
+	.profile-img-card {
+		width: 96px;
+		height: 96px;
+		margin: 0 auto 10px;
+		display: block;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+	}
+	.containerMargin{
+		    margin-top: 30px;
+	}
 </style>
+
 <body>
 
-  <div class="container">
-        <div class="row ">
-         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4"> 
-        	 <div class="panel panel-default"> 
-        		<div class="panel-heading">
-			    		<h3 class="panel-title">Registro</h3>
-			 			</div>
-			 			<div class="panel-body">
-			    		<form role="form"  action="http://localhost:3000/user/signup" method="POST">
-			    			<!-- <div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			                <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
-			    					</div>
-			    				</div>
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
-			    					</div>
-			    				</div>
-			    			</div> -->
+	<div class="container containerMargin">
+		<div class="row ">
+			<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 ">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Registro</h3>
+					</div>
+					<div class="panel-body">
+						<form role="form" action="http://localhost:3000/user/signup" method="POST">
+							<div class="row">
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="Nombre">Nombre</label>
+									<div class="col-md-8">
+										<input id="Nombre" name="name" type="text" placeholder="Nombre" class="form-control input-md" required="">
 
-			    			<div class="form-group">
-			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
-			    			</div>
+									</div>
+								</div>
+								<br>
+								<br>
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="Nombre">Email</label>
+									<div class="col-md-8">
+										<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-12"> <br>
+									<label class="">Contraseña</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Contraseña">
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirmación Contraseña">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+							<div class="col-md-3">	
+							</div>
+							<div class="col-md-6">
+							<input type="submit" value="Register" class="btn btn-info btn-block">							
 
-			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
-			    					</div>
-			    				</div>
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
-			    					</div>
-			    				</div>
-			    			</div>
-			    			
-			    			<input type="submit" value="Register" class="btn btn-info btn-block">
-			    		
-			    		</form>
-			    	</div>
-	    		 </div> 
-    		 </div> 
-    	</div>
-    </div>
+								</div>
+							<div class="col-md-3">	</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
+
 </html>

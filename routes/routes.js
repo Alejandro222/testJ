@@ -1,28 +1,28 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('passport'); 
+var passport = require('passport');
 var controllers = require('.././controllers');
 var authMiddleware = require('../middleware/auth');
 
-router.get('/',controllers.HomeController.index);
+router.get('/', controllers.HomeController.index);
 //router users
-router.get('/user/signin',controllers.UserController.getSignIn);
+router.get('/user/signin', controllers.UserController.getSignIn);
 
-router.post('/user/signin', passport.authenticate('local',{
-    successRedirect : '/user/profile',
-    failureRedirect : '/user/signin',
-    failureFlash : true
+router.post('/user/signin', passport.authenticate('local', {
+    successRedirect: '/user/profile',
+    failureRedirect: '/user/signin',
+    failureFlash: true
 
 }));
-router.get('/user/logout',controllers.UserController.logout);
-router.get('/user/profile',authMiddleware.isLogged ,controllers.UserController.profile);
+router.get('/user/logout', controllers.UserController.logout);
+router.get('/user/profile', authMiddleware.isLogged, controllers.UserController.profile);
+router.get('/user/signup', authMiddleware.isLogged, controllers.UserController.getSignUp);
+router.post('/user/signup', authMiddleware.isLogged, controllers.UserController.postSignUp);
 
-
-router.get('/user/signup',controllers.UserController.getSignUp);
-router.post('/user/signup',controllers.UserController.postSignUp);
-
-
-
+// routes images
+router.post('/image', controllers.ImageController.postImage);
+router.get('/image', controllers.ImageController.getImage);
+router.get('/image/proyectos', controllers.ImageController.getImageProyecto);
 
 
 

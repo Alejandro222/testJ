@@ -1,11 +1,9 @@
 module.exports = {
 
-    isLogged : function (req, res , next){
-        if(req.isAuthenticated()){
-            // console.log('sdf');
+    isLogged: function(req, res, next) {
+        if (req.isAuthenticated()) {
             next();
-        }
-        else{
+        } else {
             res.redirect('/user/signin');
         }
     }
