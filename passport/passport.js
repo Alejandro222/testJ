@@ -4,13 +4,13 @@ var bcrypt = require('bcryptjs');
 
 
 module.exports = function(passport) {
-    var criteria = function(email) {
-        return {
-            where: {
-                email: email
-            }
-        };
-    }
+    // var criteria = function(email) {
+    //     return {
+    //         where: {
+    //             name: email
+    //         }
+    //     };
+    // }
     passport.serializeUser(function(user, done) {
         done(null, user);
 
@@ -23,11 +23,14 @@ module.exports = function(passport) {
 
         passReqToCallback: true
     }, function(req, email, password, done) {
-
         console.log(email);
-        var user = models.users.findOne(criteria(email));
-        if (user.length > 0) {
-            user.then(user => {
+        var user = models.users;
+        user.findOne({
+            where: {
+                email: email
+            }
+        }).then(user => {
+            if (user != null) {
                 if (bcrypt.compareSync(password, user.password)) {
                     return done(null, {
                         id: user.id,
@@ -37,10 +40,11 @@ module.exports = function(passport) {
                 }
                 return done(null, false, req.flash('authMessage', 'Email o Contraseña incorrecta!'));
 
-            });
-        }
-        return done(null, false, req.flash('authMessage', 'No existe el usuario'));
 
+            } else {
+                return done(null, false, req.flash('authMessage', 'No existe el usuario'));
+            }
+        });
     }));
 
 };

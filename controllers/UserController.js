@@ -1,5 +1,7 @@
 var models = require('../models');
 var bcrypt = require('bcryptjs');
+var nodemailer = require('nodemailer');
+
 
 module.exports = {
     getSignIn: function(req, res, next) {
@@ -51,12 +53,7 @@ module.exports = {
             return;
         }
 
-
-
         return;
-
-
-
     },
 
     profile: function(req, res, next) {
@@ -70,7 +67,39 @@ module.exports = {
         req.logout();
         res.redirect('/user/signin');
     },
+    sendEmail: function(req, res, next) {
+        message = req.body.message;
+        emailFrom = req.body.email;
+        name = req.body.name;
+        phone = req.body.phone;
 
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'driverzonecr@gmail.com',
+                pass: 'Friendcompany'
+            }
+        });
 
+        var mailOptions = {
+            from: 'driverzonecr@gmail.com',
+            cc: 'driverzonecr@gmail.com',
+            to: emailFrom,
+            subject: 'Consulta Web',
+            html: '<h3>Gracias por su consulta!</h3>' + '<strong> ' + name + '</strong>' + '<br>' + '<strong> ' + message +
+                '</strong>' + '<br>' + '<h3>Pronto le responderemos!</h3>' + '<h1>Vidreos JARSOL </h1>' +
+                '<h2>Teléfono: 2474 9898</h2>'
 
-}
+        };
+
+        return transporter.sendMail(mailOptions, function(error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+                res.redirect('/');
+            }
+        });
+    },
+
+};
