@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 
 .text-muted {
@@ -50,7 +51,7 @@ h4,
 h5,
 h6 {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
+    text-transform: none;
     font-weight: 400;
 }
 
@@ -608,7 +609,7 @@ section h3.section-subheading {
 }
 
 .team-member img {
-    margin: 0 auto;
+
     border: 7px solid white;
 }
 
