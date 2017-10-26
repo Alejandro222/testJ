@@ -8,6 +8,12 @@
     height: 350px;
     border: none;
 }
+.img-logo{
+  border:none;
+  margin-top:-19px;
+}
+
+
 #map {
        height: 500px;
        width: 100%;
