@@ -8,6 +8,10 @@
     height: 350px;
     border: none;
 }
+#map {
+       height: 500px;
+       width: 100%;
+      }
 
 .contactStyle {
     padding-left: 40px;
