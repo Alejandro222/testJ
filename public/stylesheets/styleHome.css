@@ -8,11 +8,17 @@
     height: 350px;
     border: none;
 }
-.img-logo{
+.img-logo-navbar{
   border:none;
   margin-top:-19px;
 }
 
+.navbar-custom .img-logo-navbar  {
+background:url('../images/jarsolazul.png') no-repeat;/* La imagen sustituta */
+}
+.navbar-custom.affix .img-logo-navbar  {
+  background:url('../images/jarsolblanca.png') no-repeat;/* La imagen sustituta */
+}
 
 #map {
        height: 500px;
