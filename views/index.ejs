@@ -118,6 +118,41 @@
 
 
 
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="exampleModalLabel">Nueva Cotización</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Nombre:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-phone" class="col-form-label">Número de Teléfono:</label>
+                      <input type="tel" class="form-control" id="recipient-phone">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Desea Cotizar:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="close-modal" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" id="send-message">Enviar Cotización</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
 
           <!-- About Section -->
           <section id="about">
@@ -159,8 +194,10 @@
 
               <!-- in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. -->
               <!-- jQuery -->
+              <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
               <script src="vendor/jquery/jquery.min.js"></script>
               <script src="javascripts/loadImage.js"></script>
+              <script src="javascripts/index.js"></script>
 
 
               <!-- Bootstrap Core JavaScript -->
