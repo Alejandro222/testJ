@@ -118,17 +118,18 @@
 
 
 
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="QuoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h3 class="modal-title" id="exampleModalLabel">Nueva Cotización</h3>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
+
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form id="cotizacionForm" novalidate>
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">Nombre:</label>
                       <input type="text" class="form-control" id="recipient-name">
@@ -141,11 +142,45 @@
                       <label for="message-text" class="col-form-label">Desea Cotizar:</label>
                       <textarea class="form-control" id="message-text"></textarea>
                     </div>
-                  </form>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" id="close-modal" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary" id="send-message">Enviar Cotización</button>
+                  <button type="submit" class="btn btn-primary" id="send-message">Enviar Cotización</button>
+
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- popup -->
+          <div id="popup" style="display: none;">
+            <div class="content-popup">
+              <div class="close"><a href="#" id="close"><img class="close" src="images/cancel-icon.png"/></a></div>
+              <div>
+                <h2>Recuerde que su cotización no tiene ningun compromiso.!</h2>
+                <br><br>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-4 ">
+                    <div id="success"></div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-md-4 col-md-offset-4 ">
+                    <div class="center-image">
+                      <img class="" src="/images/jarsolazul.png" class="img-responsive" alt="">
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-4 ">
+                    <h1 class="text-center">Jarsol Industrial S.A</h1>
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -197,7 +232,7 @@
               <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
               <script src="vendor/jquery/jquery.min.js"></script>
               <script src="javascripts/loadImage.js"></script>
-              <script src="javascripts/index.js"></script>
+              <script src="javascripts/sendQuote.js"></script>
 
 
               <!-- Bootstrap Core JavaScript -->

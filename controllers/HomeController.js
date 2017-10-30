@@ -11,6 +11,27 @@ module.exports = {
     },
     getMtsAccesorios: function(req, res, next) {
         res.render('accesorio/index');
+    },
+    postQuote: function (req,res,next) {
+      var name = req.body.name;
+      var phone = req.body.phone;
+      var message = req.body.message;
+
+
+      return res.redirect('/');
+
+
+      // console.log(message,name,phone);
+
+
+    },
+    getQuote: function (req,res,next) {
+      var name = req.body.name;
+      var phone = req.body.phone;
+      var message = req.body.message;
+
+
+
     }
 
 

@@ -29,11 +29,13 @@ router.post('/user/send', controllers.UserController.sendEmail);
 //materiales
 
 controllers.HomeController.index
-
 router.get('/materiales/aluminio', controllers.HomeController.getMtsAluminio);
 router.get('/materiales/vidrio', controllers.HomeController.getMtsVidrio);
 router.get('/materiales/accesorio', controllers.HomeController.getMtsAccesorios);
 
+//sendQuote
+router.post('/quote/send', controllers.HomeController.postQuote);
+router.get('/quote/get', controllers.HomeController.getQuote);
 
 
 
