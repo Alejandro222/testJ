@@ -1,3 +1,4 @@
+var firebase = require("firebase");
 module.exports = {
 
     index: function(req, res, next) {
@@ -17,10 +18,15 @@ module.exports = {
       var phone = req.body.phone;
       var message = req.body.message;
 
-
+      // var db =firebase.database();
+      // var newQuote = db.ref("quote").push();
+      //
+      // newQuote.set({
+      //   name: name,
+      //   phone: phone,
+      //   message: message
+      // });
       return res.redirect('/');
-
-
       // console.log(message,name,phone);
 
 

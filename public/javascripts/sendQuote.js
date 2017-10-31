@@ -28,8 +28,9 @@ $("#send-message").click(function(event) {
           //     .append("<strong>Su cotización a sido enviada. </strong>");
           // $('.content-popup > .alert-success')
           //     .append('</div>');
-          $('.content-popup')
-              .append("<h3>Su cotización a sido enviada. </h3>");
+          $("#success").empty();
+          $('#success')
+              .append("<h3>Su cotización a sido enviada.! </h3>");
 
           //clear all fields
           $('#cotizacionForm').trigger("reset");
@@ -38,17 +39,20 @@ $("#send-message").click(function(event) {
           popUp();
       },
       error: function() {
-          // Fail message
-          $('#success').html("<div class='alert alert-danger'>");
-          $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-              .append("</button>");
-          $('#success > .alert-danger').append($("<strong>").text("Disculpe " + firstName + ",problemas con el envio de datos, intente de de nuevo!"));
-          $('#success > .alert-danger').append('</div>');
+          // // Fail message
+          // $('#success').html("<div class='alert alert-danger'>");
+          // $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+          //     .append("</button>");
+          // $('#success > .alert-danger').append($("<strong>").text("Disculpe " + firstName + ",problemas con el envio de datos, intente de de nuevo!"));
+          // $('#success > .alert-danger').append('</div>');
+
+          $('.content-popup')
+            .append($("<h3>").text("Disculpe " + firstName + ",problemas con el envio de datos, intente de de nuevo!"));
           //clear all fields
           $('#cotizacionForm').trigger("reset");
-          $('#cotizacionForm').modal('hide');
-
-          alert('no se envio');
+          $('#QuoteModal').modal('hide');
+          popUp();
+          // alert('no se envio');
 
       },
   });
@@ -57,9 +61,9 @@ $("#close-modal").click(function(event) {
   clearInput();
 });
 
-$('#name').focus(function() {
-    $('#success').html('');
-});
+// $('#name').focus(function() {
+//     $('#success').html('');
+// });
 function popUp() {
   // $('#open').click(function(){
       $('#popup').fadeIn('slow');

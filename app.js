@@ -16,6 +16,13 @@ var passport = require('passport');
 var fileUpload = require('express-fileupload');
 
 require('./passport/passport')(passport);
+// firebase
+var firebase = require('firebase');
+
+firebase.initializeApp({
+  serviceAccount: "jarsol-6d2f1e610f38.json",
+  databaseURL:"https://jarsol-bc683.firebaseio.com"
+});
 
 var routes = require('./routes/routes');
 
