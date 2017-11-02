@@ -1,86 +1,76 @@
 $(document).ready(function() {
 
-$("#send-message").click(function(event) {
-  var name= $("#recipient-name").val();
-  var phone =$("#recipient-phone").val();
-  var message = $("#message-text").val();
-  var firstName = name;
-  if (firstName.indexOf(' ') >= 0) {
-      firstName = name.split(' ').slice(0, -1).join(' ');
-  }
+  $("#send-message").click(function(event) {
+    var name = $("#recipient-name").val();
+    var phone = $("#recipient-phone").val();
+    var email = $("#recipient-email").val();
+    var message = $("#message-text").val();
+    var date = new Date();
+    var firstName = name;
+    var item= $("#sel1").find("option:selected").val();
 
-  $.ajax({
+
+    if (firstName.indexOf(' ') >= 0) {
+      firstName = name.split(' ').slice(0, -1).join(' ');
+    }
+
+    $.ajax({
       url: "http://localhost:3000/quote/send",
       type: "POST",
       data: {
-          name: name,
-          phone: phone,
-          message: message
+        name: name,
+        phone: phone,
+        email: email,
+        message: message,
+        date:date,
+        item:item
       },
       cache: false,
       success: function() {
-          // Success message
-          // $('.content-popup').html("<div class='alert alert-success'>");
-          // $('.content-popup > .alert-success');
-          // // .html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-          // //     .append("</button>");
-          // $('.content-popup > .alert-success')
-          //     .append("<strong>Su cotización a sido enviada. </strong>");
-          // $('.content-popup > .alert-success')
-          //     .append('</div>');
-          $("#success").empty();
-          $('#success')
-              .append("<h3>Su cotización a sido enviada.! </h3>");
+        // Success message
+        $("#success").empty();
+        $('#success')
+          .append("<h3>Su cotización a sido enviada.! </h3>");
 
-          //clear all fields
-          $('#cotizacionForm').trigger("reset");
-          $('#QuoteModal').modal('hide');
-          // alert('se envio');
-          popUp();
+        //clear all fields
+        $('#cotizacionForm').trigger("reset");
+        $('#QuoteModal').modal('hide');
+        // alert('se envio');
+        popUp();
       },
       error: function() {
-          // // Fail message
-          // $('#success').html("<div class='alert alert-danger'>");
-          // $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-          //     .append("</button>");
-          // $('#success > .alert-danger').append($("<strong>").text("Disculpe " + firstName + ",problemas con el envio de datos, intente de de nuevo!"));
-          // $('#success > .alert-danger').append('</div>');
-
-          $('.content-popup')
-            .append($("<h3>").text("Disculpe " + firstName + ",problemas con el envio de datos, intente de de nuevo!"));
-          //clear all fields
-          $('#cotizacionForm').trigger("reset");
-          $('#QuoteModal').modal('hide');
-          popUp();
-          // alert('no se envio');
+        $('.content-popup')
+          .append($("<h3>").text("Disculpe " + firstName + ",problemas con el envio de datos, intente de de nuevo!"));
+        //clear all fields
+        $('#cotizacionForm').trigger("reset");
+        $('#QuoteModal').modal('hide');
+        popUp();
 
       },
+    });
   });
-});
-$("#close-modal").click(function(event) {
-  clearInput();
-});
+  $("#close-modal").click(function(event) {
+    clearInput();
+  });
 
-// $('#name').focus(function() {
-//     $('#success').html('');
-// });
-function popUp() {
-  // $('#open').click(function(){
-      $('#popup').fadeIn('slow');
-      $('.popup-overlay').fadeIn('slow');
-      $('.popup-overlay').height($(window).height());
-      return false;
+  // $('#name').focus(function() {
+  //     $('#success').html('');
   // });
-};
-$('#close').click(function(){
+  function popUp() {
+    // $('#open').click(function(){
+    $('#popup').fadeIn('slow');
+    $('.popup-overlay').fadeIn('slow');
+    $('.popup-overlay').height($(window).height());
+    return false;
+    // });
+  };
+  $('#close').click(function() {
     $('#popup').fadeOut('slow');
     $('.popup-overlay').fadeOut('slow');
     return false;
-});
+  });
 
-function clearInput() {
-  $('#cotizacionForm').trigger("reset");
-
-}
-
+  function clearInput() {
+    $('#cotizacionForm').trigger("reset");
+  }
 });

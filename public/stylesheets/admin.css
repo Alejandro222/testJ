@@ -1,0 +1,10 @@
+.article-style {
+  border-style: groove;
+  border-radius: 15px;
+  padding: 32px;
+  margin: 10px;
+}
+
+.danger-style{
+      margin-left: 20px;
+}
