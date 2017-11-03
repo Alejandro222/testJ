@@ -12,51 +12,50 @@
   var db = firebase.database();
   var ref = db.ref("quote");
   // create event to access a data
-  ref.on("child_added", function(snapshot) {
-    var elem = $(document.createElement('article'));
-    elem.attr('class', 'article-style');
-    elem.attr('id', snapshot.key).html(HTMLQuote(snapshot.val(), snapshot.key)).appendTo('#content-quote');
-    // add event to button
-    $(".success-1").click(function(event) {
-      var id = event.target.id;
-      changeStateQuote(id, 1);
-    });
-    $(".danger-0").click(function(event) {
-      var id = event.target.id;
-      changeStateQuote(id, 0);
-    });
-    // update state
-    function changeStateQuote(id, state) {
-      db.ref().child('/quote/' + id).update({
-        state: state,
+  function createArticle() {
+    ref.orderByChild("score").limitToFirst(7).on("child_added", function(snapshot) {
+      var elem = $(document.createElement('article'));
+
+      if (snapshot.val().state == 1) {
+        elem.attr('class', 'article-style state' + snapshot.val().state);
+      } else {
+        elem.attr('class', 'article-style state' + snapshot.val().state);
+      }
+      elem.html(HTMLQuote(snapshot.val(), snapshot.key)).appendTo('#content-quote');
+      // add event to button
+      $(".success-1").click(function(event) {
+        var id = event.target.id;
+        changeStateQuote(id, 1);
       });
-      location.reload();
-    };
-
-    switch (snapshot.val().state) {
-      case 0:
-        $('.article-style').css({
-          'background-color': '#c7203fba'
-        })
-        break;
-      case 1:
-        $('.article-style').css({
+      $(".danger-0").click(function(event) {
+        var id = event.target.id;
+        changeStateQuote(id, 0);
+      });
+      // update state
+      function changeStateQuote(id, state) {
+        db.ref().child('/quote/' + id).update({
+          state: state,
+        });
+        location.reload();
+      };
+      $(document).ready(function() {
+        $('.state1').css({
           'background-color': '#1ed077b5'
-        })
-        break;
-      case 2:
-        $('.article-style').css({
-          'background-color': '#158bc5a6'
-        })
-        break;
-      default:
+        });
 
-    };
+        $('.state0').css({
+          'background-color': '#c7203fba'
 
+        });
+      });
+      $('.article-style').css({
+        'background-color': '#158bc5a6'
+      });
 
-  }, function(error) {
-    console.log("Error: " + error.code);
-  });
+    }, function(error) {
+      console.log("Error: " + error.code);
+    });
+  };
 
   function HTMLQuote(data, id) {
     var content = "<h3> Nombre:  " + data.name + "</h3>";
@@ -75,3 +74,4 @@
     var elem = $('#' + snapshot.key);
     elem.html(HTMLQuote(snapshot.val()));
   });
+  createArticle();

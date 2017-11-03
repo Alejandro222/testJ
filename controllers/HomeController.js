@@ -35,9 +35,6 @@ module.exports = {
       state:state
     });
     return res.redirect('/');
-    // console.log(message,name,phone);
-
-
   },
   getQuote: function(req, res, next) {
 
@@ -46,9 +43,5 @@ module.exports = {
       isAuthenticated: req.isAuthenticated(),
       user: req.user
     });
-
-
   }
-
-
 }
