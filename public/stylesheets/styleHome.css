@@ -9,6 +9,12 @@
   border: none;
 }
 
+.exit-style {
+  margin-right: 15px;
+  margin-top: 12px;
+  font-size: 30px;
+}
+
 .img-logo-navbar {
   border: none;
   margin-top: -19px;
@@ -178,9 +184,39 @@
   right: -2px;
   top: -5px;
 }
+.close-style {
+  margin-left: 30px;
+  font-size: 30px;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
 
+}
 
-.center-image{
+.center-image {
   display: flex;
-justify-content: center;
+  justify-content: center;
+}
+
+.error{
+    background-color: #BC1010;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    margin-left: 16px;
+    margin-top: 6px;
+    position: absolute;
+}
+.error:before{ /* Este es un truco para crear una flechita */
+    content: '';
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #BC1010;
+    border-left: 8px solid transparent;
+    left: -16px;
+    position: absolute;
+    top: 5px;
 }
