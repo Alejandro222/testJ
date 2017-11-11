@@ -1,8 +1,3 @@
-// $(document).ready(function() {
-//
-
-// });
-
 $(document).ready(function() {
 
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;    
@@ -30,13 +25,8 @@ $(document).ready(function() {
         var message = $("#message-text").val();
         var item = $("#sel1").find("option:selected").val();
 
-
-
-
           var date = new Date();
           var firstName = name;
-
-
           if (firstName.indexOf(' ') >= 0) {
             firstName = name.split(' ').slice(0, -1).join(' ');
           }
@@ -93,8 +83,6 @@ $(document).ready(function() {
       function clearInput() {
         $('#cotizacionForm').trigger("reset");
       }
-
-
     }
 
   });    
