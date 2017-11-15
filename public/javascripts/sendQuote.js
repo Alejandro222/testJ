@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     var emailreg = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;    
     $("#send-message").click(function() {        
       $(".error").remove();        
@@ -18,7 +17,6 @@ $(document).ready(function() {
       }    
     else  {
       // si todo esta bien, se envian los datos
-      $("#send-message").click(function(event) {
         var name = $("#recipient-name").val();
         var phone = $("#recipient-phone").val();
         var email = $("#recipient-email").val();
@@ -47,7 +45,7 @@ $(document).ready(function() {
               // Success message
               $("#success").empty();
               $('#success')
-                .append("<h3>Su cotización a sido enviada.! </h3>");
+                .append("<h3>Su cotización ha sido enviada! </h3>");
 
               //clear all fields
               $('#cotizacionForm').trigger("reset");
@@ -63,7 +61,6 @@ $(document).ready(function() {
               popUp();
             },
           });
-      });
       $("#close-modal").click(function(event) {
         clearInput();
       });
@@ -84,7 +81,6 @@ $(document).ready(function() {
         $('#cotizacionForm').trigger("reset");
       }
     }
-
   });    
     $("#recipient-name, #message-text, #recipient-phone").keyup(function() {        
       if ($(this).val() != "") {            

@@ -1,10 +1,9 @@
 $(window).load(function() {
-
     $(function() {
         fileOnload();
 
         function fileOnload() {
-            var result = 'http://localhost:3000/images/proyectos/slide3.jpg';
+            var result = 'http://localhost:3000/images/proyectos/imagenProyecto2.jpg';
             // 1920x1250
 
               $("#imageSlide").attr("width", "1920");
@@ -13,10 +12,6 @@ $(window).load(function() {
         }
     });
 });
-
-// $(document).ready(function() {
-//     $('#imageSlide').css({ 'width':'1920px', 'height':'1250px' });
-// });
 
 // google maps
 function initMap() {

@@ -26,13 +26,6 @@ firebase.initializeApp({
 
 var routes = require('./routes/routes');
 
-// var index = require('./routes/index');
-// var users = require('./routes/users');
-// var materiales = require('./routes/materiales');
-// var productos = require('./routes/productos');
-// var admin = require('./routes/admin');
-
-
 var app = express();
 app.use(cookieParser());
 app.use(session({
@@ -61,11 +54,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', routes);
-// app.use('/', index);
-// app.use('/users', users);
-// app.use('/admin', admin);
-// app.use('/materiales', materiales);
-// app.use('/productos', productos);
+
 
 
 // catch 404 and forward to error handler

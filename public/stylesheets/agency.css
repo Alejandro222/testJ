@@ -182,7 +182,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 25px 0;
     -webkit-transition: padding 0.3s;
-    /*https: //cdn.pixabay.com/photo/2016/09/15/00/34/torres-1670887_960_720.jpg*/
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
     border: none;
@@ -658,7 +657,7 @@ ul.social-buttons {
 
 ul.social-buttons li a {
   display: block;
-  background-color: #222222;
+  background-color: #222222b8;
   height: 40px;
   width: 40px;
   border-radius: 100%;
