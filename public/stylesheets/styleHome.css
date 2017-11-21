@@ -23,6 +23,7 @@
 .navbar-custom .img-logo-navbar {
   background: url('../images/jarsolazul.png') no-repeat;
   /* La imagen sustituta */
+      height: 60px;
 }
 
 .navbar-custom.affix .img-logo-navbar {
@@ -178,12 +179,12 @@
 }
 
 .close {
-  position: absolute;
-  border: none;
   margin: 0px;
   right: -2px;
   top: -5px;
+  opacity: .5;
 }
+
 .close-style {
   margin-left: 30px;
   font-size: 30px;
@@ -192,7 +193,10 @@
   cursor: pointer;
   background: 0 0;
   border: 0;
+}
 
+.close:focus, .close:hover {
+  opacity: inherit;
 }
 
 .center-image {
@@ -200,28 +204,32 @@
   justify-content: center;
 }
 
-.error{
-    background-color: #BC1010;
-    padding: 6px 12px;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    margin-left: 16px;
-    margin-top: 6px;
-    position: absolute;
-}
-.error:before{ /* Este es un truco para crear una flechita */
-    content: '';
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 8px solid #BC1010;
-    border-left: 8px solid transparent;
-    left: -16px;
-    position: absolute;
-    top: 5px;
+.error {
+  background-color: #BC1010;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  margin-left: 16px;
+  margin-top: 6px;
+  position: absolute;
 }
 
+.error:before {
+  /* Este es un truco para crear una flechita */
+  content: '';
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #BC1010;
+  border-left: 8px solid transparent;
+  left: -16px;
+  position: absolute;
+  top: 5px;
+}
+
+
 /* Makes images fully responsive */
+
 
 /*.img-responsive,
 .thumbnail > img,
@@ -232,6 +240,7 @@
   width: 100%;
   height: auto;
 }*/
+
 
 /*img{
 max-width: 100%;
