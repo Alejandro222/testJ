@@ -4,9 +4,21 @@
 }
 
 .imgLogo {
-  width: 365px;
-  height: 350px;
+  width: 450px;
+  height: 355px;
   border: none;
+}
+.change-margin{
+      margin-top: -62px;
+}
+ .btn:hover {
+    color: #337ab7;;
+    text-decoration: none;
+}
+/* Changes position of caption */
+.carousel-caption {
+    top: 0%;
+    bottom: auto;
 }
 
 .exit-style {

@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-light-gray {
   background-color: #eeeeee;
+      /*padding-bottom: 70px;*/
 }
 
 .bg-darkest-gray {
@@ -547,7 +548,7 @@ section h3.section-subheading {
 }
 
 .team-member img {
-  border: 7px solid white;
+  border: 7px solid #1d68a738;
 }
 
 .team-member h4 {
@@ -657,7 +658,7 @@ ul.social-buttons {
 
 ul.social-buttons li a {
   display: block;
-  background-color: #222222b8;
+  background-color: #144567b8;
   height: 40px;
   width: 40px;
   border-radius: 100%;
