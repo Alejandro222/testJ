@@ -30,20 +30,21 @@
         <a class="navbar-brand" href="#">JARSOL</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="http://localhost:3000/user/profile">Home</a></li>
+        <li class="active"><a href="/user/profile">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right ">
         <li><a href="" class="noneCursor"><span class="glyphicon glyphicon-eye-open "></span>   <% if(isAuthenticated ) { %>
             <%=user.name %>
         <% }%></a></li>
-        <li><a href="http://localhost:3000/user/signup"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
-        <li><a href="http://localhost:3000/user/logout"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>
+        <li><a href="/user/signup"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
+        <li><a href="/user/logout"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
     <h1 class="text-center">Panel de Cotizaciones</h1>
+    <h2 class="text-center" id="addCant"></h2>
     <div class="row">
       <div class="col-md-8 col-md-offset-2 " id="content-quote">
       </div>

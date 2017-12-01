@@ -13,11 +13,10 @@
   var ref = db.ref("quote");
   // create event to access a data
   var cantInit = 10;
-
   function createArticle() {
+    var contQuote = 0;
     ref.on("child_added", function(snapshot) {
       var cantElement = snapshot.key.length;
-      console.log('se agrego uno nuevo');
       if (cantInit == cantElement) {
         Push.create("Nueva Cotización!", {
           body: "Ha ingresado una nueva Cotización",
@@ -29,19 +28,20 @@
           }
         });
         cantInit = 0;
-        cantElement =0;
-      }else {
+        cantElement = 0;
+      } else {
         cantInit += 10;
 
       }
 
       var elem = $(document.createElement('article'));
-
-      if (snapshot.val().state == 1) {
+      if (snapshot.val().state == 2) {
         elem.attr('class', 'article-style state' + snapshot.val().state);
+        contQuote++;
       } else {
         elem.attr('class', 'article-style state' + snapshot.val().state);
       }
+      $('#addCant').html('Cantidad de Nuevas Cotizaciones: '+contQuote);
       elem.html(HTMLQuote(snapshot.val(), snapshot.key)).appendTo('#content-quote');
       // add event to button
       $(".success-1").click(function(event) {
@@ -54,9 +54,9 @@
       });
       $(".bnt-delete").click(function(event) {
         var id = event.target.id;
-      ref.child(id).remove();
-      location.reload();
-      
+        ref.child(id).remove();
+        location.reload();
+
       });
 
       // update state
@@ -66,6 +66,7 @@
         });
         location.reload();
       };
+
       $(document).ready(function() {
         $('.state1').css({
           'background-color': '#1ed077b5'
@@ -75,18 +76,16 @@
           'background-color': '#c7203fba'
 
         });
+        $('article').attr('id', 'id-article');
       });
       $('.article-style').css({
         'background-color': '#158bc5a6'
-      });
-
-
+      }, );
 
     }, function(error) {
       console.log("Error: " + error.code);
     });
   };
-
 
   function HTMLQuote(data, id) {
     var content = "<h3> Nombre:  " + data.name + "</h3>";
@@ -101,9 +100,7 @@
     return content;
   };
 
-
   // Push.clear();
-
   // cambios en un item
   ref.on("child_changed", function(snapshot) {
     var elem = $('#' + snapshot.key);

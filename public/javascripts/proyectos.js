@@ -13,8 +13,5 @@ $(document).ready(function() {
     });
 
     $('#previa').click(function(e) {
-
-        // alert(e.name);
-
     });
 });

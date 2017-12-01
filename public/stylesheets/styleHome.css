@@ -20,6 +20,9 @@
     top: 0%;
     bottom: auto;
 }
+.portfolio-item{
+      color: #337cc7;
+}
 
 .exit-style {
   margin-right: 15px;

@@ -34,7 +34,6 @@ module.exports = {
         res.render('images/new');
     },
     getImageProyecto: function(req, res, next) {
-
         var images = models.images.findAll();
 
         res.format({
@@ -47,11 +46,6 @@ module.exports = {
                 })
             }
         });
-
-
-
-
-
     }
 
 }

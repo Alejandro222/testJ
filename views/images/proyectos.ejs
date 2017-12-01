@@ -1,107 +1,101 @@
-<<!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <title>Imagenes Proyetos</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../stylesheets/styleGestion.css" rel="stylesheet">
-    </head>
+<head>
+  <title>Imagenes Proyetos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../stylesheets/styleGestion.css" rel="stylesheet">
+</head>
 
-    <body>
+<body>
 
-        <div class="container">
-            <div class="row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <a href="/user/profile">Regresar</a>
+      </div>
+    </div>
 
-                <div class="col-md-5">
+    <div class="row">
+      <div>
+        <br>
+        <h3 class="text-center">Gestion de imagenes de la seccion de proyectos</h3>
+        <h4>NOTA: No se pudo terminar esta sección.</h4>
+      </div>
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
 
-                    <a href="http://localhost:3000/user/profile">Regresar</a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div>
-                    <br>
-                    <h3 class="">Gestion de imagenes de la seccion de proyectos</h3>
-                </div>
+        <table class="table">
+          <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Accion</th>
+          </tr>
+          <% images.forEach(function(image) { %>
+            <tr>
+              <td>
+                previa <strong><%=image.picture%></strong>
+              </td>
+              <td>
+                <div class="col-md-6 " align="center"> <img alt="Picture" src="<%=image.picture%>" class=" img-responsive"> </div>
+              </td>
+              <td>
+                <button class="btn-primary" type="">Eliminar</button>
                 <br>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
+                <br>
+                <button type="" class="btn-primary open">Cambiar</button>
+              </td>
+            </tr>
+            <% }); %>
+      </div>
+      </table>
+    </div>
 
-                    <table class="table">
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Imagen</th>
-                            <th>Accion</th>
-                        </tr>
-                        <% images.forEach(function(image) { %>
-                            <tr>
-                                <td>
-                                    previa <strong><%=image.picture%></strong>
-                                </td>
-                                <td>
-                                    <div class="col-md-6 " align="center"> <img alt="Picture" src="http://localhost:3000<%=image.picture%>" class=" img-responsive">                                        </div>
-                                </td>
-                                <td>
-                                    <button class="btn-primary" type="">Eliminar</button>
-                                    <br>
-                                    <br>
-                                    <button type="" class="btn-primary open">Cambiar</button>
-                                </td>
-                            </tr>
-                            <% }); %>
+    <div class="col-md-6">
+      <div id="popup" style="display: none;">
+        <div class="content-popup">
+          <div class="close"><a href="#" id="close"><img src="./../images/cancel.png"/></a></div>
+          <div>
+            <h2>Cargar nueva imagen</h2>
+            <div class="panel-body">
+              <form class="form-horizontal" role="form" method="post" action="/image/edit" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="mob_no" class="col-md-3 control-label">Guardar Imagen</label>
+                  <div class="col-md-8">
+                    <input class="form-control" type="file" name="picture" id="previa" accept="" />
+                  </div>
                 </div>
-                </table>
-            </div>
-
-            <div class="col-md-6">
-                <div id="popup" style="display: none;">
-                    <div class="content-popup">
-                        <div class="close"><a href="#" id="close"><img src="images/close.png"/></a></div>
-                        <div>
-                            <h2>Cargar nueva imagen</h2>
-                            <div class="panel-body">
-                                <form class="form-horizontal" role="form" method="post" action="http://localhost:3000/image/edit" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <label for="mob_no" class="col-md-3 control-label">Guardar Imagen</label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" type="file" name="picture" id="previa" accept="" />
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <!-- Button -->
-                                        <div class="col-md-offset-3 col-md-9">
-                                            <button type="summit" class="btn btn-info" ><i class="icon-hand-right"></i> Guardar Imagen</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group">
+                  <!-- Button -->
+                  <div class="col-md-offset-3 col-md-9">
+                    <button type="summit" class="btn btn-info"><i class="icon-hand-right"></i> Guardar Imagen</button>
+                  </div>
                 </div>
-
+              </form>
             </div>
-
+          </div>
         </div>
+      </div>
 
-        <div class="previa">
-        </div>
+    </div>
 
+  </div>
 
+  <div class="previa">
+  </div>
 
+  </div>
 
-
-        </div>
-
-        <script src="../vendor/jquery/jquery.min.js"></script>
-        <script src="../javascripts/proyectos.js"></script>
-
-
-    </body>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../javascripts/proyectos.js"></script>
 
 
+</body>
 
-    </html>
+
+
+</html>

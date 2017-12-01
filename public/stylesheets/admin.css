@@ -8,3 +8,7 @@
 .danger-style{
       margin-left: 20px;
 }
+.img-center{
+  display: flex;
+    justify-content: center;
+}

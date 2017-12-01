@@ -40,10 +40,4 @@ router.get('/quote', controllers.HomeController.getQuote);
 // authMiddleware.isLogged,
 
 
-
-
-
-
-
-
 module.exports = router;

@@ -1,84 +1,109 @@
+<!DOCTYPE html>
 <html>
-<header>
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-</header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="./../images/jarsol.png">
+  <title>JARSOL-Administración</title>
+</head>
+
 <style>
-    .profile-img-card {
-        width: 96px;
-        height: 96px;
-        margin: 0 auto 10px;
-        display: block;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        border-radius: 50%;
-    }
+  .profile-img-card {
+    width: 96px;
+    height: 96px;
 
-    .marginAlert {
-        margin-top: 15px;
-    }
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .marginAlert {
+    margin-top: 15px;
+  }
+
+  .div-admin {
+    border-style: solid;
+    border-color: #4554bb;
+    background-color: #f71616;
+  }
+
+  .div-profile {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
 </style>
 
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4"> </div>
-            <div class="col-md-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"> </div>
+      <div class="col-md-4">
 
-                <% if(message.length > 0) { %>
-                    <div class="alert alert-success marginAlert" role="alert">
-                        <h2>
-                            <%=message%>
-                        </h2>
-                    </div>
-                    <% }%>
+        <% if(message.length > 0) { %>
+          <div class="alert alert-success marginAlert" role="alert">
+            <h2>
+              <%=message%>
+            </h2>
+          </div>
+          <% }%>
+            <div class="card card-container">
+              <div class="div-profile">
+                <img id="profile-img" class="profile-img-card" src="./../images/jarsol.png" />
 
+              </div>
 
-
-
-                        <div class="card card-container">
-                            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-
-                            <form class="form-signin" action="http://localhost:3000/user/signin" method="POST">
-                                <span id="reauth-email" class="reauth-email"></span>
-                                <br>
-                                <input type="email" name="username" id="inputEmail" class="form-control" placeholder="Administrador" required autofocus>
-                                <br>
-                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-                                <div id="remember" class="checkbox">
-                                    <label>
-                        <!-- <input type="checkbox" value="remember-me"> Remember me -->
+              <form class="form-signin" action="/user/signin" method="POST">
+                <span id="reauth-email" class="reauth-email"></span>
+                <br>
+                <input type="email" name="username" id="inputEmail" class="form-control" placeholder="Administrador" required autofocus>
+                <br>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <div id="remember" class="checkbox">
+                  <label>
                     </label>
-                                </div>
-                                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
-                            </form>
-                            <!-- /form -->
-                            <!-- <a href="#" class="forgot-password">
-                Forgot the password?
-            </a> -->
-                        </div>
-                        <!-- /card-container -->
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
+              </form>
             </div>
-            <div class="col-md-4">
-            </div>
-        </div>
-        <div class="row">
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+    <div class="row">
 
-            <div class="col-md-4 col-md-offset-4">
-                <% if(authMessage.length > 0) { %>
-                    <div class="alert alert-danger marginAlert" role="alert">
-                        <h4>
-                            <%=authMessage%>
-                        </h4>
-                    </div>
-                    <% }%>
-            </div>
-
-        </div>
+      <div class="col-md-4 col-md-offset-4">
+        <% if(authMessage.length > 0) { %>
+          <div class="alert alert-danger marginAlert" role="alert">
+            <h4>
+              <%=authMessage%>
+            </h4>
+          </div>
+          <% }%>
+      </div>
 
     </div>
-    <!-- /container -->
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="div-admin">
+          <h3 class="text-center">Esta sección es sólo para administradores de la página</h3>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <a href="/"> <i class="glyphicon glyphicon-arrow-left ">Regresar</i></a>
+      </div>
+    </div>
+
+  </div>
+  <!-- /container -->
 
 </body>
 
