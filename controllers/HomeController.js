@@ -15,9 +15,8 @@ module.exports = {
   },
   postQuote: function(req, res, next) {
     var name = req.body.name;
-    var phone = req.body.phone;
+    var contact = req.body.contact;
     var message = req.body.message;
-    var email = req.body.email;
     var date = req.body.date;
     var item = req.body.item;
     var state= "2";
@@ -27,8 +26,7 @@ module.exports = {
 
     newQuote.set({
       name: name,
-      phone: phone,
-      email: email,
+      contact: contact,
       message: message,
       date:date,
       item:item,

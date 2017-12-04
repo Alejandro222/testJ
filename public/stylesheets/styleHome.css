@@ -8,20 +8,27 @@
   height: 355px;
   border: none;
 }
-.change-margin{
-      margin-top: -62px;
+
+.change-margin {
+  margin-top: -62px;
 }
- .btn:hover {
-    color: #337ab7;;
-    text-decoration: none;
+
+.btn:hover {
+  color: #337ab7;
+  ;
+  text-decoration: none;
 }
+
+
 /* Changes position of caption */
+
 .carousel-caption {
-    top: 0%;
-    bottom: auto;
+  top: 0%;
+  bottom: auto;
 }
-.portfolio-item{
-      color: #337cc7;
+
+.portfolio-item {
+  color: #337cc7;
 }
 
 .exit-style {
@@ -38,7 +45,7 @@
 .navbar-custom .img-logo-navbar {
   background: url('../images/jarsolazul.png') no-repeat;
   /* La imagen sustituta */
-      height: 60px;
+  height: 60px;
 }
 
 .navbar-custom.affix .img-logo-navbar {
@@ -105,12 +112,6 @@
   -o-transition: none;
   transition: none;
 }
-
-
-/* on hover we animate the width to
- * 100% and opacity to 0 so the element
- * grows and fades out
- */
 
 .hover14:hover:after {
   width: 120%;
@@ -219,7 +220,7 @@
   justify-content: center;
 }
 
-.error {
+.error-style {
   background-color: #BC1010;
   padding: 6px 12px;
   border-radius: 4px;
@@ -230,8 +231,10 @@
   position: absolute;
 }
 
-.error:before {
-  /* Este es un truco para crear una flechita */
+
+/* Este es un truco para crear una flechita */
+
+.error-style:before {
   content: '';
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
@@ -241,23 +244,3 @@
   position: absolute;
   top: 5px;
 }
-
-
-/* Makes images fully responsive */
-
-
-/*.img-responsive,
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  display: block;
-  width: 100%;
-  height: auto;
-}*/
-
-
-/*img{
-max-width: 100%;
-height: 80%;
-}*/

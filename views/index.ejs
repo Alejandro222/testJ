@@ -11,7 +11,7 @@
             <div class="row">
               <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Servicios</h2>
-                  <h4 class="service-heading ">Trabajamos con Productos de Alta Calidad</h4>
+                <h4 class="service-heading ">Trabajamos con Productos de Alta Calidad</h4>
               </div>
             </div>
             <div class="row text-center">
@@ -72,7 +72,7 @@
 
                   <div class="carousel-inner">
                     <div class="item active">
-                      <img id="imageSlide" src="images/proyectos/slide1.jpg" alt="Liceo San Carlos"style="width:100%;">
+                      <img id="imageSlide" src="images/proyectos/slide1.jpg" alt="Liceo San Carlos" style="width:100%;">
                       <div class="carousel-caption">
                         <h3>Liceo San Carlos</h3>
                       </div>
@@ -108,7 +108,7 @@
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
-  <!--/.Carousel Wrapper-->
+                <!--/.Carousel Wrapper-->
               </div>
             </div>
           </section>
@@ -131,20 +131,14 @@
                 </div>
                 <div class="modal-body">
                   <form role="form" id="cotizacionForm">
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Nombre:</label>
+                    <div class="form-group ">
+                      <label for="recipient-name" class="col-form-label ">Nombre:</label>
                       <input type="text" class="form-control" id="recipient-name" required="">
                     </div>
                     <div class="form-group">
-                      <label for="recipient-phone" class="col-form-label">Número de Teléfono:</label>
-                      <input type="tel" class="form-control" id="recipient-phone" required="">
+                      <label for="recipient-contact" class="col-form-label">Teléfono o Email:</label>
+                      <input type="text" class="form-control" id="recipient-contact" required="">
                     </div>
-                    <div class="form-group">
-                      <label for="recipient-email" class="col-form-label">Email:</label>
-
-                      <input type="email" name="email" id="recipient-email" class="form-control input-md" placeholder="Email" required="">
-                    </div>
-
                     <div class="form-group">
                       <label for="sel1">Tipo de Consulta:</label>
                       <select class="form-control" id="sel1">
@@ -164,7 +158,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" id="close-modal" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary" id="send-message">Enviar Cotización</button>
+                  <button type="button" class="btn btn-primary" id="send-quote">Enviar Cotización</button>
                 </div>
                 </form>
               </div>
@@ -172,41 +166,43 @@
           </div>
 
           <!-- popup -->
-          <div id="popup" style="display: none;">
-            <div class="container">
+          <div class="">
 
-            <div class="content-popup">
-
-              <div class="close"><a href="#" id="close"><img class="close" src="images/cancel.png"/></a></div>
-              <br>
-              <div>
-                <h2>Recuerde que su cotización no tiene ningun compromiso.!</h2>
-                <h3>Pronto le responderemos!</h3>
-
+            <div id="popup" style="display: none;">
+              <div class="content-popup">
                 <div class="row">
-                  <div class="col-md-12 col-md-offset-1 ">
-                    <div id="success"></div>
+                  <div class="col-md-12">
+                    <div class="close"><a href="#" id="close"><img class="close" src="images/cancel.png"/></a></div>
+                    <div class="row">
+                      <br>
+                      <div class="col-md-8 col-xs-8">
+                        <h2>Recuerde que su cotización no tiene ningun compromiso.!</h2>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 col-md-offset-1 col-xs-8 ">
+                        <div id="success"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
                 <div class="row">
-
-                  <div class="col-md-4 col-md-offset-4 ">
+                  <div class="col-md-4 col-md-offset-4 col-md-8 col-xs-8">
                     <div class="center-image">
                       <img class="" src="/images/jarsolazul.png" class="img-responsive" alt="">
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4 col-md-offset-4 ">
+                  <div class="col-md-4 col-md-offset-4 col-md-8 col-xs-8">
                     <h1 class="text-center">Vidrios JARSOL</h1>
-
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
+
+          </div>
 
           </div>
 
@@ -242,11 +238,10 @@
             </div>
           </section>
           <% include ./partials/contact %>
-          <% include ./partials/footer %>
+            <% include ./partials/footer %>
 
-              <!-- in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. -->
-              <!-- jQuery -->
-              <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+              
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
               <script src="vendor/jquery/jquery.min.js"></script>
               <script src="javascripts/loadMap.js"></script>
               <script src="javascripts/sendQuote.js"></script>
@@ -264,7 +259,7 @@
               <!-- Theme JavaScript -->
               <script src="js/agency.min.js"></script>
 
-              <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOoPzU5lvKcoj8syMyEeuyrLFwu3AceNU&callback=initMap">
+              <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw-EvSCS8HGRzSMz8ZFzY_R08Wbu_kn6s&callback=initMap">
               </script>
 
     </body>

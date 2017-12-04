@@ -56,7 +56,7 @@ class Query extends AbstractQuery {
   run(sql, parameters) {
     this.sql = sql;
 
-    if (!Utils._.isEmpty(this.options.searchPath)) {
+    if (!_.isEmpty(this.options.searchPath)) {
       this.sql = this.sequelize.getQueryInterface().QueryGenerator.setSearchPath(this.options.searchPath) + sql;
     }
 
@@ -298,7 +298,12 @@ class Query extends AbstractQuery {
           _.forOwn(fields, (value, field) => {
             errors.push(new sequelizeErrors.ValidationErrorItem(
               this.getUniqueConstraintErrorMessage(field),
-              'unique violation', field, value));
+              'unique violation', // sequelizeErrors.ValidationErrorItem.Origins.DB,
+              field,
+              value,
+              this.instance,
+              'not_unique'
+            ));
           });
 
           if (this.model && this.model.uniqueKeys) {
