@@ -18,6 +18,10 @@
   ;
   text-decoration: none;
 }
+.btn.btn-send-message:hover {
+      color: #eee;
+  text-decoration: none;
+}
 
 
 /* Changes position of caption */

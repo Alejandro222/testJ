@@ -67,6 +67,7 @@ module.exports = {
         req.logout();
         res.redirect('/user/signin');
     },
+    //send email, contact page
     sendEmail: function(req, res, next) {
         message = req.body.message;
         emailFrom = req.body.email;
@@ -76,19 +77,19 @@ module.exports = {
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'driverzonecr@gmail.com',
-                pass: 'Friendcompany'
+                user: 'jarsolindustrial@gmail.com',
+                pass: 'Juanca2017'
             }
         });
 
         var mailOptions = {
-            from: 'driverzonecr@gmail.com',
-            cc: 'driverzonecr@gmail.com',
+            from: 'jarsolindustrial@gmail.com',
+            cc: 'jarsolindustrial@gmail.com',
             to: emailFrom,
             subject: 'Consulta Web',
-            html: '<h3>Gracias por su consulta!</h3>' + '<strong> ' + name + '</strong>' + '<br>' + '<strong> ' + message +
-                '</strong>' + '<br>' + '<h3>Pronto le responderemos!</h3>' + '<h1>Vidreos JARSOL </h1>' +
-                '<h2>Teléfono: 2474 9898</h2>'
+            html: '<h3>Gracias por su consulta!</h3>' + '<h3> ' + name + '</h3>'  + '<h2> ' + message +
+                '</h2>'  + '<h3>Pronto le responderemos!</h3>' +
+                '<h2>Teléfono: 2474 9898</h2>' + '<h1>Vidreos JARSOL </h1>'
 
         };
 

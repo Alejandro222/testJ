@@ -36,8 +36,8 @@ router.get('/materiales/accesorio', controllers.HomeController.getMtsAccesorios)
 //sendQuote
 router.post('/quote/send', controllers.HomeController.postQuote);
 
-router.get('/quote', controllers.HomeController.getQuote);
-// authMiddleware.isLogged,
+router.get('/quote',authMiddleware.isLogged, controllers.HomeController.getQuote);
+
 
 
 module.exports = router;

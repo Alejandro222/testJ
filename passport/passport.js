@@ -2,18 +2,9 @@ var LocalStrategy = require('passport-local').Strategy;
 var models = require('../models');
 var bcrypt = require('bcryptjs');
 
-
 module.exports = function(passport) {
-    // var criteria = function(email) {
-    //     return {
-    //         where: {
-    //             name: email
-    //         }
-    //     };
-    // }
     passport.serializeUser(function(user, done) {
         done(null, user);
-
     });
 
     passport.deserializeUser(function(obj, done) {
@@ -26,9 +17,8 @@ module.exports = function(passport) {
         console.log(email);
         var user = models.users;
         user.findOne({
-            where: {
-                email: email
-            }
+            // where: {email: { [Op.eq]: email }}
+            where: {email: email}
         }).then(user => {
             if (user != null) {
                 if (bcrypt.compareSync(password, user.password)) {

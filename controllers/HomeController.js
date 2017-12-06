@@ -35,8 +35,6 @@ module.exports = {
     return res.redirect('/');
   },
   getQuote: function(req, res, next) {
-
-
     res.render('quote/index', {
       isAuthenticated: req.isAuthenticated(),
       user: req.user
