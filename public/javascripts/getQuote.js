@@ -1,6 +1,6 @@
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDkM08lznDQc80bVx6N1o5hM95-TYoQ9Qk",
+    apiKey: process.env.APIKEY,
     authDomain: "jarsol-bc683.firebaseapp.com",
     databaseURL: "https://jarsol-bc683.firebaseio.com",
     projectId: "jarsol-bc683",
